@@ -1,0 +1,62 @@
+# Test file for Virtual Machine - All Passing Conditions
+# This file tests all operations with normal use cases
+
+# Push some initial values onto the stack
+PSH 10
+PSH 5
+PSH 2
+
+# Addition
+ADD  # 5 + 2 = 7
+PSH 3
+ADD  # 7 + 3 = 10
+
+# Subtraction
+PSH 5
+SUB  # 10 - 5 = 5
+
+# Multiplication
+PSH 3
+MUL  # 5 * 3 = 36
+
+# Division
+PSH 4
+DIV  # 15 / 4 = 3
+
+# More complex sequence
+PSH 10
+PSH 5
+ADD  # 10 + 5 = 15
+PSH 3
+MUL  # 15 * 3 = 45
+PSH 5
+DIV  # 45 / 5 = 9
+
+# Test POP
+POP  # Should output: Popped: 9
+
+# Push more values for final calculations
+PSH 100
+PSH 20
+PSH 5
+
+# Final sequence of operations
+ADD  # 20 + 5 = 25
+PSH 3
+MUL  # 25 * 3 = 75
+PSH 15
+SUB  # 75 - 15 = 60
+PSH 2
+DIV  # 60 / 2 = 30
+
+# Pop and display the final result
+POP  # Should output: Popped: 30
+
+# The stack should now contain: 100, 3,10 (from earlier calculations)
+
+# Pop remaining values
+POP  # Should output: Popped: 100
+POP  # Should output: Popped: 3
+POP  # Should output: Popped: 10
+
+HLT  # Halt the machine

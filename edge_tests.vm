@@ -1,0 +1,299 @@
+# Test file for our Virtual Machine
+# This file tests all operations and some edge cases
+
+# Basic push and pop
+PSH 5
+PSH 10
+POP
+POP
+
+# Addition
+PSH 3
+PSH 4
+ADD  # Should output: Added: 3 + 4 = 7
+
+# Subtraction
+PSH 10
+PSH 7
+SUB  # Should output: Subtracted: 10 - 7 = 3
+
+# Multiplication
+PSH 6
+PSH 7
+MUL  # Should output: Multiplied: 6 * 7 = 42
+
+# Division
+PSH 20
+PSH 5
+DIV  # Should output: Divided: 20 / 5 = 4
+
+
+# Test division by zero
+PSH 10
+PSH 0
+DIV  # Should output an error
+
+# Test integer overflow in addition
+PSH 2147483647  # INT_MAX
+PSH 1
+ADD  # Should output an overflow error
+
+# Test integer underflow in subtraction
+PSH -2147483648  # INT_MIN
+PSH 1
+SUB  # Should output an underflow error
+
+# Test integer overflow in multiplication
+PSH 1000000
+PSH 1000000
+MUL  # Should output an overflow error
+
+# Test integer overflow in division
+PSH -2147483648  # INT_MIN
+PSH -1
+DIV  # Should output an overflow error
+
+# Test stack underflow
+POP
+POP  # Should output an underflow error
+
+# Test stack overflow
+PSH 21
+PSH 22
+PSH 23
+PSH 24
+PSH 25
+PSH 26
+PSH 27
+PSH 28
+PSH 29
+PSH 30
+PSH 31
+PSH 32
+PSH 33
+PSH 34
+PSH 35
+PSH 36
+PSH 37
+PSH 38
+PSH 39
+PSH 40
+PSH 41
+PSH 42
+PSH 43
+PSH 44
+PSH 45
+PSH 46
+PSH 47
+PSH 48
+PSH 49
+PSH 50
+PSH 51
+PSH 52
+PSH 53
+PSH 54
+PSH 55
+PSH 56
+PSH 57
+PSH 58
+PSH 59
+PSH 60
+PSH 61
+PSH 62
+PSH 63
+PSH 64
+PSH 65
+PSH 66
+PSH 67
+PSH 68
+PSH 69
+PSH 70
+PSH 71
+PSH 72
+PSH 73
+PSH 74
+PSH 75
+PSH 76
+PSH 77
+PSH 78
+PSH 79
+PSH 80
+PSH 81
+PSH 82
+PSH 83
+PSH 84
+PSH 85
+PSH 86
+PSH 87
+PSH 88
+PSH 89
+PSH 90
+PSH 91
+PSH 92
+PSH 93
+PSH 94
+PSH 95
+PSH 96
+PSH 97
+PSH 98
+PSH 99
+PSH 100
+PSH 101
+PSH 102
+PSH 103
+PSH 104
+PSH 105
+PSH 106
+PSH 107
+PSH 108
+PSH 109
+PSH 110
+PSH 111
+PSH 112
+PSH 113
+PSH 114
+PSH 115
+PSH 116
+PSH 117
+PSH 118
+PSH 119
+PSH 120
+PSH 121
+PSH 122
+PSH 123
+PSH 124
+PSH 125
+PSH 126
+PSH 127
+PSH 128
+PSH 129
+PSH 130
+PSH 131
+PSH 132
+PSH 133
+PSH 134
+PSH 135
+PSH 136
+PSH 137
+PSH 138
+PSH 139
+PSH 140
+PSH 141
+PSH 142
+PSH 143
+PSH 144
+PSH 145
+PSH 146
+PSH 147
+PSH 148
+PSH 149
+PSH 150
+PSH 151
+PSH 152
+PSH 153
+PSH 154
+PSH 155
+PSH 156
+PSH 157
+PSH 158
+PSH 159
+PSH 160
+PSH 161
+PSH 162
+PSH 163
+PSH 164
+PSH 165
+PSH 166
+PSH 167
+PSH 168
+PSH 169
+PSH 170
+PSH 171
+PSH 172
+PSH 173
+PSH 174
+PSH 175
+PSH 176
+PSH 177
+PSH 178
+PSH 179
+PSH 180
+PSH 181
+PSH 182
+PSH 183
+PSH 184
+PSH 185
+PSH 186
+PSH 187
+PSH 188
+PSH 189
+PSH 190
+PSH 191
+PSH 192
+PSH 193
+PSH 194
+PSH 195
+PSH 196
+PSH 197
+PSH 198
+PSH 199
+PSH 200
+PSH 201
+PSH 202
+PSH 203
+PSH 204
+PSH 205
+PSH 206
+PSH 207
+PSH 208
+PSH 209
+PSH 210
+PSH 211
+PSH 212
+PSH 213
+PSH 214
+PSH 215
+PSH 216
+PSH 217
+PSH 218
+PSH 219
+PSH 220
+PSH 221
+PSH 222
+PSH 223
+PSH 224
+PSH 225
+PSH 226
+PSH 227
+PSH 228
+PSH 229
+PSH 230
+PSH 231
+PSH 232
+PSH 233
+PSH 234
+PSH 235
+PSH 236
+PSH 237
+PSH 238
+PSH 239
+PSH 240
+PSH 241
+PSH 242
+PSH 243
+PSH 244
+PSH 245
+PSH 246
+PSH 247
+PSH 248
+PSH 249
+PSH 250
+PSH 251
+PSH 252
+PSH 253
+PSH 254
+PSH 255
+PSH 256
+PSH 257
+
+HLT  # Halt the machine
